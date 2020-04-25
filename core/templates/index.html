@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+</head>
+<body>
+    <h1>This is my Index</h1>
+    <h2>{{key}}</h2>
+    <h3>{{outro}}</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produto in produtos %}
+        <tr>
+            <td><a href="{% url 'produto' produto.id %}">{{ produto.name}}</a></td>
+            <td>{{produto.value}}</td>
+            <td>{{produto.qty}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+</body>
+</html>
